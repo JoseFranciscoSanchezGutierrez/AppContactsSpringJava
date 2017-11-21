@@ -10,10 +10,10 @@ Deberás montar el proyecto en un IDE con un servidor Spring Boot o montar un se
 
 ## Base de datos: MySQL
 
-El proyecto está montado y configurado (properties.yml) para trabajar con una BBDD pero podrás configurarlo y trabajar con cualquier otra BBDD.
+El proyecto está montado y configurado (application.yml) para trabajar con una BBDD pero podrás configurarlo y trabajar con cualquier otra BBDD.
 
 
-## Estructura del proyecto
+## Estructura del proyecto backend
 
 * **BackendApplication**: se trata de la clase base donde se configura el proyecto como aplicación de Spring Boot y además se establece la disponibilidad de servicios batch (schedule).
 
@@ -78,3 +78,40 @@ Todas nuestras interfaces Repository extenderán de JpaRepository para tener acc
 * **ContactServiceImpl**: se trata de la implementación de la interfaz del servicio de contacto. Se hará uso del componente de conversión entre modelo y entidad de contactos, también se hará uso del repositorio para el acceso a datos.
 
 * **UserServiceImpl**:  es la implementación de UserDetailsService de Spring Security para toda la gestión de las credenciales de usuario en el login y que quede resuelto con el módulo de Spring Security.
+
+
+## Estructura del proyecto frontend
+
+Este proyecto está montado con Thymeleaf para las vistas, CSS y png para los recursos de imágenes.
+
+### *Resources / static / css:*
+
+* **login**:  clase css para estilo de formularios.
+
+* **style**:  clase css para estilo general del body y de las cabeceras h1.
+
+### *Resources / static / imgs:*
+
+* **403**:  recurso estático para el error 403.
+
+* **404**:  recurso estático para el error 404.
+
+* **500**:  recurso estático para el error 500.
+
+### *Resources / templates:*
+
+* **contactform**:  formulario HTML de contacto.
+
+* **contacts**:  formulario HTML de gestión de contactos.
+
+* **login**:  formulario HTML de login de usuario.
+
+### *Resources / templates / error:*
+
+Spring es capaz de detectar las vistas de error si están en este FileSystem.
+
+* **403**:  formulario HTML para el error 403.
+
+* **404**:  formulario HTML para el error 404.
+
+* **500**:  formulario HTML para el error 500.
